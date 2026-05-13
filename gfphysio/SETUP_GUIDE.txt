@@ -1,0 +1,150 @@
+# GF PHYSIO — WEBSITE SETUP GUIDE
+# Getting your site live on GitHub Pages before June 10
+# =====================================================
+
+## OVERVIEW
+You'll do 4 things:
+  1. Create a GitHub account (5 min)
+  2. Upload your site files (10 min)
+  3. Turn on GitHub Pages (2 min)
+  4. Point your domain gfphysio.com.au to it (15 min)
+
+Total time: ~30 minutes. No coding required.
+
+---
+
+## STEP 1 — CREATE A GITHUB ACCOUNT
+1. Go to https://github.com
+2. Click "Sign up"
+3. Use any email — georgia@gfphysio.com.au works fine
+4. Choose a username — something like "gfphysio" or "georgiafagan"
+5. Complete the verification and confirm your email
+
+---
+
+## STEP 2 — CREATE A REPOSITORY (this is where your files live)
+1. Once logged in, click the green "New" button (top left)
+2. Name it exactly: gfphysio.com.au
+   (This naming convention helps with custom domains)
+3. Set it to "Public"
+4. Tick "Add a README file"
+5. Click "Create repository"
+
+---
+
+## STEP 3 — UPLOAD YOUR FILES
+1. Inside your new repository, click "Add file" → "Upload files"
+2. Drag and drop ALL the files from the gfphysio folder:
+     index.html
+     about.html
+     services.html
+     sport.html
+     blog.html
+     contact.html
+     css/ (the whole folder)
+     js/  (the whole folder)
+     images/ (the whole folder — see IMAGES section below)
+3. Scroll down, write "First upload" in the commit message box
+4. Click "Commit changes"
+
+---
+
+## STEP 4 — TURN ON GITHUB PAGES
+1. In your repository, click "Settings" (top menu)
+2. Scroll down the left sidebar to "Pages"
+3. Under "Source", select "Deploy from a branch"
+4. Under "Branch", select "main" and "/ (root)"
+5. Click Save
+6. Wait 2–3 minutes, then your site will be live at:
+   https://yourusername.github.io/gfphysio.com.au
+
+---
+
+## STEP 5 — CONNECT YOUR DOMAIN (gfphysio.com.au)
+This tells the internet to send gfphysio.com.au to your GitHub site.
+
+### In GitHub:
+1. Still in Settings → Pages
+2. Under "Custom domain", type: gfphysio.com.au
+3. Click Save
+4. Tick "Enforce HTTPS" (may take a few minutes to appear)
+
+### In your domain registrar:
+You need to find where you registered gfphysio.com.au
+(Check your emails for "domain" or try: VentraIP, Crazy Domains, GoDaddy, or your web host)
+
+Once you find it, add these DNS records:
+
+  TYPE    NAME    VALUE
+  A       @       185.199.108.153
+  A       @       185.199.109.153
+  A       @       185.199.110.153
+  A       @       185.199.111.153
+  CNAME   www     yourusername.github.io
+
+DNS changes take 10 minutes to 24 hours to fully propagate.
+After that, gfphysio.com.au will load your new site.
+
+---
+
+## STEP 6 — SET UP FORMSPREE (contact form emails)
+1. Go to https://formspree.io
+2. Sign up with georgia@gfphysio.com.au (free plan is fine)
+3. Click "New Form"
+4. Give it a name: "GF Physio Contact"
+5. Copy the form ID — it looks like: xpznqvkb
+6. Open contact.html in a text editor (Notepad on Windows, TextEdit on Mac)
+7. Find this line:
+     action="https://formspree.io/f/YOUR_FORMSPREE_ID"
+8. Replace YOUR_FORMSPREE_ID with your actual ID, e.g.:
+     action="https://formspree.io/f/xpznqvkb"
+9. Save the file and re-upload it to GitHub (repeat Step 3 with just contact.html)
+
+---
+
+## STEP 7 — ADD YOUR PHOTOS
+The site references these image files in the images/ folder.
+Rename your photos to match these filenames before uploading:
+
+  images/georgia.jpg     → A photo of you (used in hero & about page)
+  images/reception.jpg   → Reception desk photo
+  images/gym1.jpg        → Main gym floor photo
+  images/gym2.jpg        → Equipment / second gym angle
+  images/treatment.jpg   → Treatment room photo
+  images/corridor.jpg    → Corridor / hallway photo
+  images/atp.jpg         → Any tennis / ATP related photo
+  images/cricket.jpg     → Any cricket / Rocket Factory photo
+
+Tips:
+- Resize photos to max 1500px wide before uploading (use squoosh.app — free)
+- Aim for under 300KB per image for fast loading
+- JPG format is fine for photos
+
+If a photo is missing, the site still works — it just shows the dark background.
+
+---
+
+## FUTURE UPDATES
+Whenever you want to change text, update a photo, or add a blog post:
+1. Open the relevant .html file in TextEdit (Mac) or Notepad (Windows)
+2. Find the text you want to change and edit it
+3. Save the file
+4. Go to GitHub → your repository → "Add file" → "Upload files"
+5. Upload the changed file and commit
+
+Or simply send me the change and I'll update the file for you in seconds.
+
+---
+
+## YOUR KEY LINKS CHECKLIST
+  Cliniko booking:  https://gfphysio.au4.cliniko.com/bookings#service  ✓
+  Instagram:        https://www.instagram.com/gfphysio_/               ✓
+  Email:            georgia@gfphysio.com.au                            ✓
+  Phone:            0437 995 888                                        ✓
+  Address:          203 McKinnon Road, McKinnon VIC 3204               ✓
+
+---
+
+## NEED HELP?
+Stuck on any step? Screenshot the issue and ask Claude —
+just paste this guide back into the chat and describe where you're up to.

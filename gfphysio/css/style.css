@@ -1,0 +1,258 @@
+/* ============================================================
+   GF PHYSIO — MAIN STYLESHEET
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Barlow+Condensed:wght@400;600;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --dark:       #1a1210;
+  --dark2:      #231916;
+  --dark3:      #2e1f1a;
+  --dark4:      #3d2920;
+  --red:        #c0392b;
+  --red-light:  #e05a45;
+  --red-dim:    #8a2a1e;
+  --cream:      #fdf6e3;
+  --cream-dim:  #e8d9b8;
+  --muted:      #a89880;
+  --border:     rgba(192,57,43,0.22);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--dark);
+  color: var(--cream);
+  font-family: 'Barlow', sans-serif;
+  font-weight: 300;
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+img { display: block; max-width: 100%; }
+a { text-decoration: none; color: inherit; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 56px;
+  background: rgba(26,18,16,0.96);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(8px);
+}
+.nav-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 26px;
+  letter-spacing: 3px;
+  color: var(--cream);
+}
+.nav-logo span { color: var(--red); }
+.nav-links { display: flex; gap: 32px; align-items: center; list-style: none; }
+.nav-links a {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--cream-dim);
+  transition: color 0.2s;
+}
+.nav-links a:hover,
+.nav-links a.active { color: var(--red-light); }
+.nav-cta {
+  background: var(--red) !important;
+  color: var(--cream) !important;
+  padding: 9px 22px !important;
+  letter-spacing: 2px;
+  transition: background 0.2s !important;
+}
+.nav-cta:hover { background: var(--red-light) !important; }
+
+/* Hamburger */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+  background: none;
+  border: none;
+}
+.nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--cream);
+  transition: all 0.3s;
+}
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 61px; left: 0; right: 0;
+  background: var(--dark2);
+  border-bottom: 1px solid var(--border);
+  padding: 24px 32px;
+  z-index: 199;
+  flex-direction: column;
+  gap: 20px;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--cream-dim);
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+.mobile-menu a:last-child { border-bottom: none; }
+.mobile-menu .nav-cta {
+  background: var(--red) !important;
+  color: var(--cream) !important;
+  text-align: center;
+  padding: 12px !important;
+}
+
+/* ── PAGE WRAPPER ── */
+.page-wrap { padding-top: 61px; }
+
+/* ── SECTION UTILITIES ── */
+.section { padding: 96px 80px; }
+.section--dark  { background: var(--dark); }
+.section--dark2 { background: var(--dark2); }
+.section--dark3 { background: var(--dark3); }
+.section--red   { background: var(--red); }
+
+.section-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 5px; text-transform: uppercase;
+  color: var(--red); margin-bottom: 14px;
+}
+.section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(46px, 5.5vw, 72px);
+  line-height: 0.95; letter-spacing: 1px;
+  color: var(--cream); margin-bottom: 22px;
+}
+.section-title span { color: var(--red); }
+.section-body {
+  font-size: 16px; font-weight: 300;
+  color: var(--cream-dim); line-height: 1.75;
+  max-width: 560px;
+}
+.gold-line { width: 44px; height: 2px; background: var(--red); margin: 28px 0; }
+
+/* ── BUTTONS ── */
+.btn {
+  display: inline-block;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px; font-weight: 700;
+  letter-spacing: 3px; text-transform: uppercase;
+  padding: 14px 34px;
+  transition: background 0.2s, transform 0.15s;
+  cursor: pointer; border: none;
+}
+.btn-primary { background: var(--red); color: var(--cream); }
+.btn-primary:hover { background: var(--red-light); transform: translateY(-1px); }
+.btn-ghost {
+  background: transparent;
+  color: var(--cream);
+  border: 1px solid var(--red-dim);
+}
+.btn-ghost:hover { border-color: var(--red); color: var(--red-light); }
+
+/* ── TICKER ── */
+.ticker { background: var(--red); overflow: hidden; padding: 11px 0; white-space: nowrap; }
+.ticker-inner { display: inline-block; animation: tick 28s linear infinite; }
+.ticker-item {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px; font-weight: 700;
+  letter-spacing: 3px; text-transform: uppercase;
+  color: var(--cream); padding: 0 36px;
+}
+.ticker-dot { color: rgba(253,246,227,0.4); padding: 0 8px; }
+@keyframes tick { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--dark2);
+  border-top: 1px solid var(--border);
+  padding: 56px 80px 36px;
+}
+.footer-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 48px; flex-wrap: wrap; gap: 40px; }
+.footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 32px; letter-spacing: 3px; color: var(--cream); }
+.footer-logo span { color: var(--red); }
+.footer-tagline { font-size: 13px; color: var(--muted); margin-top: 6px; }
+.footer-nav { display: flex; gap: 48px; flex-wrap: wrap; }
+.footer-col h4 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 3px; text-transform: uppercase;
+  color: var(--red); margin-bottom: 14px;
+}
+.footer-col a {
+  display: block; font-size: 13px; font-weight: 300;
+  color: var(--muted); margin-bottom: 9px;
+  transition: color 0.2s;
+}
+.footer-col a:hover { color: var(--cream); }
+.footer-bottom {
+  border-top: 1px solid var(--border);
+  padding-top: 28px;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 16px;
+}
+.footer-copy { font-size: 12px; color: var(--muted); }
+.footer-social {
+  display: flex; gap: 12px;
+}
+.social-btn {
+  width: 34px; height: 34px;
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 700;
+  color: var(--muted);
+  font-family: 'Barlow Condensed', sans-serif;
+  letter-spacing: 0;
+  transition: border-color 0.2s, color 0.2s;
+}
+.social-btn:hover { border-color: var(--red); color: var(--red-light); }
+
+/* ── CREDENTIAL STRIP ── */
+.cred-strip { background: var(--dark3); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.cred-grid { display: grid; grid-template-columns: repeat(4,1fr); }
+.cred-item {
+  padding: 36px 40px; text-align: center;
+  border-right: 1px solid var(--border);
+}
+.cred-item:last-child { border-right: none; }
+.cred-num { font-family: 'Bebas Neue', sans-serif; font-size: 48px; line-height: 1; color: var(--red); }
+.cred-label { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-top: 5px; }
+
+/* ── PAGE HERO (inner pages) ── */
+.page-hero {
+  background: var(--dark2);
+  padding: 80px 80px 64px;
+  border-bottom: 1px solid var(--border);
+}
+.page-hero .section-title { margin-bottom: 16px; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  nav { padding: 16px 24px; }
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+  .section { padding: 64px 28px; }
+  .section-title { font-size: 42px; }
+  .cred-grid { grid-template-columns: repeat(2,1fr); }
+  .cred-item { border-right: none; border-bottom: 1px solid var(--border); }
+  footer { padding: 48px 28px 28px; }
+  .footer-top { flex-direction: column; }
+  .page-hero { padding: 60px 28px 48px; }
+}

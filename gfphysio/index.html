@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GF Physio | Sports & Clinical Physiotherapy — McKinnon, Melbourne</title>
+<meta name="description" content="GF Physio offers elite sports physiotherapy in McKinnon, Melbourne. ATP Tour experience, Rocket Factory cricket, sports rehab, clinical Pilates, women's health and NDIS.">
+<link rel="stylesheet" href="css/style.css">
+<style>
+/* ── HOME-SPECIFIC STYLES ── */
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 55% 45%;
+  position: relative;
+}
+.hero-left {
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 140px 64px 88px;
+  position: relative; z-index: 2;
+}
+.hero-eyebrow {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 5px; text-transform: uppercase;
+  color: var(--red); margin-bottom: 18px;
+}
+.hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(68px, 8vw, 116px);
+  line-height: 0.9; letter-spacing: 2px;
+  color: var(--cream); margin-bottom: 26px;
+}
+.hero-title span { color: var(--red); }
+.hero-sub {
+  font-size: 17px; font-weight: 300;
+  color: var(--cream-dim); max-width: 440px;
+  margin-bottom: 36px; line-height: 1.75;
+}
+.hero-badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 44px; }
+.badge {
+  border: 1px solid var(--red-dim);
+  color: var(--red-light);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase;
+  padding: 5px 14px;
+}
+.hero-ctas { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+.hero-right { position: relative; overflow: hidden; }
+.hero-right img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.55) contrast(1.1); }
+.hero-overlay { position: absolute; inset: 0; background: linear-gradient(to right, var(--dark) 0%, transparent 35%); }
+.hero-bottom-fade { position: absolute; bottom: 0; left: 0; right: 0; height: 200px; background: linear-gradient(to top, var(--dark), transparent); }
+
+/* ABOUT STRIP */
+.about-strip {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+}
+.about-img-wrap { position: relative; overflow: hidden; min-height: 560px; }
+.about-img-wrap img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.65) saturate(0.85); }
+.about-img-fade { position: absolute; inset: 0; background: linear-gradient(to right, transparent 55%, var(--dark2) 100%); }
+.about-content { padding: 80px 72px 80px 60px; display: flex; flex-direction: column; justify-content: center; background: var(--dark2); }
+.quals { display: flex; flex-direction: column; gap: 11px; margin: 28px 0 36px; }
+.qual { display: flex; align-items: center; gap: 14px; font-size: 14px; color: var(--cream-dim); }
+.qual-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--red); flex-shrink: 0; }
+
+/* SERVICES GRID */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 1px; background: var(--border);
+  border: 1px solid var(--border);
+  margin-top: 56px;
+}
+.service-card {
+  background: var(--dark2);
+  padding: 36px 28px 44px;
+  position: relative;
+  transition: background 0.25s;
+}
+.service-card:hover { background: var(--dark3); }
+.service-num { font-family: 'Bebas Neue', sans-serif; font-size: 44px; color: rgba(192,57,43,0.18); margin-bottom: 20px; line-height: 1; }
+.service-name { font-family: 'Barlow Condensed', sans-serif; font-size: 18px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--cream); margin-bottom: 14px; }
+.service-desc { font-size: 14px; color: var(--muted); line-height: 1.7; }
+.service-link { position: absolute; bottom: 24px; right: 24px; color: var(--red); font-size: 18px; opacity: 0; transition: opacity 0.2s, transform 0.2s; }
+.service-card:hover .service-link { opacity: 1; transform: translate(3px,-3px); }
+
+/* SPORT PANELS */
+.sport-panels { display: grid; grid-template-columns: 1fr 1fr; }
+.sport-panel { padding: 72px 60px; min-height: 480px; display: flex; flex-direction: column; justify-content: flex-end; position: relative; overflow: hidden; }
+.sport-panel-atp { background: linear-gradient(135deg, #1a0e0a 0%, #2e1812 100%); border-right: 1px solid var(--border); }
+.sport-panel-cricket { background: linear-gradient(135deg, #1a1208 0%, #2d1e0e 100%); }
+.sport-bg-text {
+  position: absolute; top: 36px; left: 48px;
+  font-family: 'Bebas Neue', sans-serif; font-size: 110px; line-height: 1;
+  color: rgba(255,255,255,0.04); pointer-events: none; letter-spacing: 4px;
+}
+.sport-tag {
+  display: inline-block;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+  padding: 4px 12px; margin-bottom: 18px;
+}
+.sport-panel-atp .sport-tag { background: rgba(192,57,43,0.2); color: var(--red-light); }
+.sport-panel-cricket .sport-tag { background: rgba(192,57,43,0.15); color: #e8c890; }
+.sport-title { font-family: 'Bebas Neue', sans-serif; font-size: 46px; line-height: 0.95; letter-spacing: 1px; color: var(--cream); margin-bottom: 18px; }
+.sport-body { font-size: 14px; color: var(--cream-dim); line-height: 1.7; max-width: 380px; margin-bottom: 28px; }
+.sport-stats { display: flex; gap: 28px; }
+.sport-stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 36px; color: var(--red); line-height: 1; }
+.sport-stat-label { font-family: 'Barlow Condensed', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-top: 3px; }
+.sport-divider { width: 1px; background: var(--border); align-self: stretch; }
+
+/* QUOTE STRIP */
+.quote-strip { padding: 72px 80px; text-align: center; }
+.quote-text {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(28px, 4vw, 48px);
+  line-height: 1.1; letter-spacing: 1px;
+  color: var(--cream); max-width: 860px; margin: 0 auto 20px;
+}
+.quote-attr { font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: rgba(253,246,227,0.5); }
+
+/* CLINIC SCROLL */
+.clinic-scroll-wrap { overflow-x: auto; padding: 0 80px; scrollbar-width: none; }
+.clinic-scroll-wrap::-webkit-scrollbar { display: none; }
+.clinic-scroll { display: flex; gap: 14px; }
+.clinic-img { flex-shrink: 0; width: 340px; height: 260px; overflow: hidden; position: relative; }
+.clinic-img.wide { width: 460px; }
+.clinic-img img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.7); transition: filter 0.3s, transform 0.4s; }
+.clinic-img:hover img { filter: brightness(0.9); transform: scale(1.04); }
+.clinic-label {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 18px 18px 14px;
+  background: linear-gradient(to top, rgba(26,18,16,0.9) 0%, transparent 100%);
+  font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--red-light);
+}
+
+/* BOOKING CTA */
+.booking-cta { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 80px; }
+.booking-details { display: flex; flex-direction: column; gap: 20px; margin: 28px 0 36px; }
+.booking-item { display: flex; gap: 14px; align-items: flex-start; }
+.booking-icon { width: 34px; height: 34px; border: 1px solid var(--red-dim); display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; color: var(--red); }
+.booking-label { font-family: 'Barlow Condensed', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 3px; }
+.booking-value { font-size: 14px; color: var(--cream-dim); }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-left { padding: 100px 28px 56px; }
+  .hero-right { display: none; }
+  .about-strip { grid-template-columns: 1fr; }
+  .about-img-wrap { min-height: 320px; }
+  .about-img-fade { display: none; }
+  .about-content { padding: 56px 28px; }
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .sport-panels { grid-template-columns: 1fr; }
+  .sport-panel-atp { border-right: none; border-bottom: 1px solid var(--border); }
+  .booking-cta { grid-template-columns: 1fr; gap: 0; }
+  .clinic-scroll-wrap { padding: 0 28px; }
+  .quote-strip { padding: 56px 28px; }
+}
+@media (max-width: 600px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .hero-title { font-size: 58px; }
+}
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <p class="hero-eyebrow">McKinnon, Melbourne · AHPRA Registered</p>
+      <h1 class="hero-title">ELITE<br>PHYSIO<span>.</span><br>REAL<br>RESULTS.</h1>
+      <p class="hero-sub">From the ATP Tour to the cricket crease — sports physiotherapy at the highest level, now available to you in McKinnon.</p>
+      <div class="hero-badges">
+        <span class="badge">ATP Tour Physio</span>
+        <span class="badge">Rocket Factory Cricket</span>
+        <span class="badge">Sports Rehab</span>
+        <span class="badge">Women's Health</span>
+      </div>
+      <div class="hero-ctas">
+        <a href="https://gfphysio.au4.cliniko.com/bookings#service" class="btn btn-primary" target="_blank">Book a Session</a>
+        <a href="about.html" class="btn btn-ghost">Meet Georgia</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <img src="images/georgia.jpg" alt="Georgia Fagan, Physiotherapist">
+      <div class="hero-overlay"></div>
+      <div class="hero-bottom-fade"></div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker">
+    <div class="ticker-inner">
+      <span class="ticker-item">ATP World Tour</span><span class="ticker-dot">◆</span>
+      <span class="ticker-item">Rocket Factory Cricket</span><span class="ticker-dot">◆</span>
+      <span class="ticker-item">Sports Rehabilitation</span><span class="ticker-dot">◆</span>
+      <span class="ticker-item">Clinical Pilates</span><span class="ticker-dot">◆</span>
+      <span class="ticker-item">Women's Health</span><span class="ticker-dot">◆</span>
+      <span class="ticker-item">NDIS Support</span><span class="ticker-dot">◆</span>
+      <span class="ticker-item">McKinnon · Melbourne</span><span class="ticker-dot">◆</span>
+      <span class="ticker-item">ATP World Tour</span><span class="ticker-dot">◆</span>
+      <span class="ticker-item">Rocket Factory Cricket</span><span class="ticker-dot">◆</span>
+      <span class="ticker-item">Sports Rehabilitation</span><span class="ticker-dot">◆</span>
+      <span class="ticker-item">Clinical Pilates</span><span class="ticker-dot">◆</span>
+      <span class="ticker-item">Women's Health</span><span class="ticker-dot">◆</span>
+      <span class="ticker-item">NDIS Support</span><span class="ticker-dot">◆</span>
+      <span class="ticker-item">McKinnon · Melbourne</span><span class="ticker-dot">◆</span>
+    </div>
+  </div>
+
+  <!-- CREDENTIALS -->
+  <div class="cred-strip">
+    <div class="cred-grid">
+      <div class="cred-item"><div class="cred-num">ATP</div><div class="cred-label">Tour Level Tennis</div></div>
+      <div class="cred-item"><div class="cred-num">RF</div><div class="cred-label">Rocket Factory Cricket</div></div>
+      <div class="cred-item"><div class="cred-num">MSc</div><div class="cred-label">Master of Physiotherapy</div></div>
+      <div class="cred-item"><div class="cred-num">AHPRA</div><div class="cred-label">Registered Practitioner</div></div>
+    </div>
+  </div>
+
+  <!-- SPORT PANELS -->
+  <div class="sport-panels">
+    <div class="sport-panel sport-panel-atp">
+      <div class="sport-bg-text">ATP</div>
+      <div>
+        <span class="sport-tag">Tennis · ATP World Tour</span>
+        <h2 class="sport-title">ON THE ROAD<br>WITH THE<br>ATP TOUR</h2>
+        <p class="sport-body">In 2025 Georgia joined the ATP World Tour, completing the Miami Open before heading to Europe for the full grass court season — Queens, Wimbledon, and beyond. Courtside assessment, acute injury management, pre-match preparation, and recovery protocols at the highest level of professional tennis.</p>
+        <div class="sport-stats">
+          <div class="sport-stat"><div class="sport-stat-num">2025</div><div class="sport-stat-label">Miami Open</div></div>
+          <div class="sport-divider"></div>
+          <div class="sport-stat"><div class="sport-stat-num">Next</div><div class="sport-stat-label">Grass Season</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="sport-panel sport-panel-cricket">
+      <div class="sport-bg-text">RF</div>
+      <div>
+        <span class="sport-tag">Cricket · The Rocket Factory</span>
+        <h2 class="sport-title">THE ROCKET<br>FACTORY</h2>
+        <p class="sport-body">Georgia recently joined The Rocket Factory — cricket's elite fast bowling development program. Working alongside coaches and performance staff, her focus is keeping emerging pace bowlers healthy, managing bowling loads, and building the physical foundations for long, injury-free careers.</p>
+        <div class="sport-stats">
+          <div class="sport-stat"><div class="sport-stat-num">Fast</div><div class="sport-stat-label">Bowling Rehab</div></div>
+          <div class="sport-divider"></div>
+          <div class="sport-stat"><div class="sport-stat-num">Load</div><div class="sport-stat-label">Management</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT STRIP -->
+  <div class="about-strip">
+    <div class="about-img-wrap">
+      <img src="images/georgia.jpg" alt="Georgia Fagan">
+      <div class="about-img-fade"></div>
+    </div>
+    <div class="about-content">
+      <p class="section-label">The Practitioner</p>
+      <h2 class="section-title">GEORGIA<br><span>FAGAN</span></h2>
+      <div class="gold-line"></div>
+      <p class="section-body">A Melbourne-based physiotherapist with a career spanning elite sport and clinical practice. A former semi-professional basketball player, Georgia understands the demands of performance — and the frustration of injury.</p>
+      <div class="quals">
+        <div class="qual"><div class="qual-dot"></div>Master of Physiotherapy — Griffith University</div>
+        <div class="qual"><div class="qual-dot"></div>Bachelor of Exercise Science — Griffith University</div>
+        <div class="qual"><div class="qual-dot"></div>ATP World Tour Physiotherapist</div>
+        <div class="qual"><div class="qual-dot"></div>The Rocket Factory — Cricket Physiotherapist</div>
+        <div class="qual"><div class="qual-dot"></div>Semi-Professional Basketball Player</div>
+      </div>
+      <a href="about.html" class="btn btn-primary">Learn More About Georgia</a>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="section section--dark">
+    <p class="section-label">What We Offer</p>
+    <h2 class="section-title">SERVICES BUILT<br>FOR <span>PERFORMANCE</span></h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-num">01</div>
+        <div class="service-name">Sports Physiotherapy</div>
+        <p class="service-desc">Evidence-based assessment and treatment for sports injuries. From acute sprains to complex overuse conditions — return to play, faster and stronger.</p>
+        <a href="services.html#physio" class="service-link">↗</a>
+      </div>
+      <div class="service-card">
+        <div class="service-num">02</div>
+        <div class="service-name">Clinical Pilates & Rehab</div>
+        <p class="service-desc">Physio-led Pilates tailored to your injury history, movement patterns, and goals. Strength, control, and longevity on the reformer.</p>
+        <a href="services.html#pilates" class="service-link">↗</a>
+      </div>
+      <div class="service-card">
+        <div class="service-num">03</div>
+        <div class="service-name">Women's Health</div>
+        <p class="service-desc">Specialist care across the female lifespan — pregnancy, postnatal, pelvic floor, menopause, and athletic performance.</p>
+        <a href="services.html#womens" class="service-link">↗</a>
+      </div>
+      <div class="service-card">
+        <div class="service-num">04</div>
+        <div class="service-name">NDIS Physiotherapy</div>
+        <p class="service-desc">In-clinic and community-based physiotherapy for NDIS participants. Personalised programs that build strength and independence.</p>
+        <a href="services.html#ndis" class="service-link">↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLINIC PHOTOS -->
+  <section class="section section--dark2" style="padding-left:0;padding-right:0;">
+    <div style="padding:0 80px 48px;">
+      <p class="section-label">The Space</p>
+      <h2 class="section-title">McKINNON<br><span>SPORTS & SPINAL</span></h2>
+      <p class="section-body">A purpose-built sports physio environment at 203 McKinnon Road — private gym, reformer, cable systems, and dedicated treatment rooms.</p>
+    </div>
+    <div class="clinic-scroll-wrap">
+      <div class="clinic-scroll">
+        <div class="clinic-img"><img src="images/reception.jpg" alt="Reception"><div class="clinic-label">Reception</div></div>
+        <div class="clinic-img wide"><img src="images/gym1.jpg" alt="Gym floor"><div class="clinic-label">Private Gym</div></div>
+        <div class="clinic-img"><img src="images/treatment.jpg" alt="Treatment room"><div class="clinic-label">Treatment Room</div></div>
+        <div class="clinic-img wide"><img src="images/gym2.jpg" alt="Equipment"><div class="clinic-label">Equipment</div></div>
+        <div class="clinic-img"><img src="images/corridor.jpg" alt="Corridor"><div class="clinic-label">The Clinic</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <section class="section section--red">
+    <div class="quote-strip" style="padding:0;">
+      <p class="quote-text">"EXPERIENCE AT THE HIGHEST LEVEL OF SPORT, DELIVERED WITH THE PERSONAL TOUCH OF A PRIVATE PRACTICE."</p>
+      <p class="quote-attr">GF Physio · McKinnon, Melbourne</p>
+    </div>
+  </section>
+
+  <!-- BOOKING CTA -->
+  <section class="section section--dark3">
+    <div class="booking-cta">
+      <div>
+        <p class="section-label">Get Started</p>
+        <h2 class="section-title">BOOK YOUR<br><span>SESSION</span></h2>
+        <div class="gold-line"></div>
+        <p class="section-body">Whether you're a weekend warrior, elite athlete, or simply want to move better — Georgia's approach is always tailored, evidence-based, and athlete-first.</p>
+        <div class="booking-details">
+          <div class="booking-item">
+            <div class="booking-icon">📍</div>
+            <div><div class="booking-label">Location</div><div class="booking-value">203 McKinnon Road, McKinnon VIC 3204</div></div>
+          </div>
+          <div class="booking-item">
+            <div class="booking-icon">📞</div>
+            <div><div class="booking-label">Phone</div><div class="booking-value"><a href="tel:0437995888" style="color:var(--cream-dim);">0437 995 888</a></div></div>
+          </div>
+          <div class="booking-item">
+            <div class="booking-icon">✉</div>
+            <div><div class="booking-label">Email</div><div class="booking-value"><a href="mailto:georgia@gfphysio.com.au" style="color:var(--cream-dim);">georgia@gfphysio.com.au</a></div></div>
+          </div>
+        </div>
+        <a href="https://gfphysio.au4.cliniko.com/bookings#service" class="btn btn-primary" target="_blank">Book Online Now</a>
+      </div>
+      <div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3148.0!2d145.047!3d-37.917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s203+McKinnon+Road+McKinnon!5e0!3m2!1sen!2sau!4v1" width="100%" height="320" style="border:1px solid var(--border); filter:grayscale(1) brightness(0.7);" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+</div>
+<script src="js/layout.js"></script>
+</body>
+</html>
