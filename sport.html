@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>High Performance Sport | GF Physio — ATP Tour & Rocket Factory</title>
+<meta name="description" content="Georgia Fagan works on the ATP World Tour and with The Rocket Factory cricket program. Elite sport physiotherapy experience at the highest level.">
+<link rel="stylesheet" href="css/style.css">
+<style>
+/* SPORT HERO */
+.sport-hero {
+  min-height: 60vh;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 120px 80px 72px;
+  background: linear-gradient(135deg, #1a0e0a 0%, #2e1812 100%);
+  position: relative; overflow: hidden;
+}
+.sport-hero-bg {
+  position: absolute; inset: 0;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 320px; line-height: 1;
+  color: rgba(255,255,255,0.025);
+  display: flex; align-items: center; justify-content: center;
+  letter-spacing: 8px; pointer-events: none;
+  user-select: none;
+}
+
+/* DEEP DIVE PANELS */
+.deep-panel {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+  border-bottom: 1px solid var(--border);
+}
+.deep-panel.reverse { direction: rtl; }
+.deep-panel.reverse > * { direction: ltr; }
+.deep-content { padding: 80px 72px; display: flex; flex-direction: column; justify-content: center; }
+.deep-image { position: relative; overflow: hidden; min-height: 520px; }
+.deep-image img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.55) contrast(1.1) saturate(0.7); }
+.deep-image-overlay { position: absolute; inset: 0; }
+.deep-panel:not(.reverse) .deep-image-overlay { background: linear-gradient(to left, transparent 50%, var(--dark) 100%); }
+.deep-panel.reverse .deep-image-overlay { background: linear-gradient(to right, transparent 50%, var(--dark2) 100%); }
+
+.timeline { display: flex; flex-direction: column; gap: 0; margin: 32px 0; }
+.timeline-item { display: flex; gap: 20px; padding: 20px 0; border-bottom: 1px solid var(--border); }
+.timeline-item:last-child { border-bottom: none; }
+.timeline-year { font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: var(--red); flex-shrink: 0; width: 64px; line-height: 1.3; }
+.timeline-text { font-size: 14px; color: var(--cream-dim); line-height: 1.65; }
+.timeline-text strong { color: var(--cream); font-weight: 600; }
+
+.tag-row { display: flex; gap: 8px; flex-wrap: wrap; margin: 24px 0 32px; }
+.pill {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+  padding: 5px 14px;
+  border: 1px solid var(--red-dim); color: var(--red-light);
+}
+
+/* BASKETBALL STRIP */
+.basketball-strip {
+  display: grid; grid-template-columns: 1fr 2fr;
+  border-top: 1px solid var(--border);
+}
+.bball-label {
+  background: var(--red);
+  padding: 64px 48px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.bball-label h2 { font-family: 'Bebas Neue', sans-serif; font-size: 52px; line-height: 0.95; color: var(--cream); }
+.bball-content { padding: 64px 72px; background: var(--dark3); display: flex; flex-direction: column; justify-content: center; }
+
+/* UPCOMING */
+.upcoming-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 48px; }
+.upcoming-card { background: var(--dark2); padding: 32px 28px; }
+.upcoming-tournament { font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: var(--cream); margin-bottom: 6px; }
+.upcoming-detail { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--red); margin-bottom: 10px; }
+.upcoming-desc { font-size: 13px; color: var(--muted); line-height: 1.65; }
+.upcoming-status {
+  display: inline-block; margin-top: 14px;
+  font-family: 'Barlow Condensed', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+  padding: 4px 12px;
+}
+.status-done { background: rgba(192,57,43,0.2); color: var(--red-light); }
+.status-next { background: rgba(192,57,43,0.5); color: var(--cream); }
+
+@media (max-width: 900px) {
+  .sport-hero { padding: 100px 28px 56px; }
+  .sport-hero-bg { font-size: 120px; }
+  .deep-panel { grid-template-columns: 1fr; direction: ltr !important; }
+  .deep-image { min-height: 300px; }
+  .deep-image-overlay { display: none; }
+  .deep-content { padding: 56px 28px; }
+  .basketball-strip { grid-template-columns: 1fr; }
+  .bball-label { padding: 48px 28px; }
+  .bball-content { padding: 48px 28px; }
+  .upcoming-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <!-- HERO -->
+  <div class="sport-hero">
+    <div class="sport-hero-bg">SPORT</div>
+    <p class="section-label">High Performance</p>
+    <h1 class="section-title" style="font-size:clamp(56px,7vw,96px);">WORKING AT<br>THE <span>HIGHEST</span><br>LEVEL</h1>
+    <p class="section-body" style="margin-top:18px;">From the ATP Tour to The Rocket Factory — Georgia brings elite sport experience that directly shapes every clinical decision she makes.</p>
+  </div>
+
+  <!-- ATP DEEP DIVE -->
+  <div class="deep-panel">
+    <div class="deep-content" style="background:var(--dark);">
+      <p class="section-label">Tennis</p>
+      <h2 class="section-title">ATP<br><span>WORLD TOUR</span></h2>
+      <div class="gold-line"></div>
+      <p class="section-body">In 2025 Georgia joined the ATP World Tour — one of the most demanding physiotherapy roles in professional sport. The Tour requires rapid assessment under pressure, creative problem-solving with limited resources, and the ability to keep athletes competing across a relentless international schedule.</p>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-year">2025</div>
+          <div class="timeline-text"><strong>Miami Open</strong> — Georgia's first ATP Tour event, working courtside and in the physio room at one of the Masters 1000's marquee hard court events in Florida.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">Jun '25</div>
+          <div class="timeline-text"><strong>Grass Court Season</strong> — Heading to Europe for the full grass season including Queen's Club Championships and Wimbledon.</div>
+        </div>
+      </div>
+      <div class="tag-row">
+        <span class="pill">Courtside Assessment</span>
+        <span class="pill">Acute Injury Management</span>
+        <span class="pill">Pre-Match Prep</span>
+        <span class="pill">Recovery Protocols</span>
+        <span class="pill">Load Monitoring</span>
+      </div>
+    </div>
+    <div class="deep-image">
+      <img src="images/atp.jpg" alt="ATP Tour">
+      <div class="deep-image-overlay"></div>
+    </div>
+  </div>
+
+  <!-- UPCOMING TOURNAMENTS -->
+  <section class="section section--dark2">
+    <p class="section-label">2025 ATP Calendar</p>
+    <h2 class="section-title">ON THE <span>ROAD</span></h2>
+    <div class="upcoming-grid">
+      <div class="upcoming-card">
+        <div class="upcoming-tournament">Miami Open</div>
+        <div class="upcoming-detail">Masters 1000 · Hard Court · Florida</div>
+        <p class="upcoming-desc">Georgia's first ATP Tour event — courtside and treatment room physiotherapy across one of the season's biggest hard court events.</p>
+        <span class="upcoming-status status-done">✓ Completed</span>
+      </div>
+      <div class="upcoming-card">
+        <div class="upcoming-tournament">Queen's Club</div>
+        <div class="upcoming-detail">ATP 500 · Grass · London</div>
+        <p class="upcoming-desc">The premier grass court warm-up event ahead of Wimbledon, at the historic Queen's Club in West London.</p>
+        <span class="upcoming-status status-next">↗ Coming Up</span>
+      </div>
+      <div class="upcoming-card">
+        <div class="upcoming-tournament">Wimbledon</div>
+        <div class="upcoming-detail">Grand Slam · Grass · London</div>
+        <p class="upcoming-desc">The Championships — the most iconic Grand Slam in tennis. Georgia will be working across the full grass court fortnight.</p>
+        <span class="upcoming-status status-next">↗ Coming Up</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROCKET FACTORY DEEP DIVE -->
+  <div class="deep-panel reverse">
+    <div class="deep-content" style="background:var(--dark2);">
+      <p class="section-label">Cricket</p>
+      <h2 class="section-title">THE ROCKET<br><span>FACTORY</span></h2>
+      <div class="gold-line"></div>
+      <p class="section-body">Georgia recently joined The Rocket Factory — cricket's elite fast bowling development program. Working alongside specialist coaches and high performance staff, Georgia's role is to keep the next generation of pace bowlers healthy, resilient, and available to bowl.</p>
+      <br>
+      <p class="section-body">Fast bowling is one of the most physically demanding actions in sport, placing enormous stress on the spine, hips, and lower limbs. Georgia's work focuses on load management, bowling-specific rehabilitation, and building the physical foundations for long, high-performance careers.</p>
+      <div class="tag-row">
+        <span class="pill">Bowling Load Management</span>
+        <span class="pill">Spinal Rehab</span>
+        <span class="pill">Injury Prevention</span>
+        <span class="pill">Biomechanics</span>
+        <span class="pill">Performance Staff Collaboration</span>
+      </div>
+      <a href="contact.html" class="btn btn-primary" style="align-self:flex-start;margin-top:8px;">Enquire About Team Physio</a>
+    </div>
+    <div class="deep-image">
+      <img src="images/cricket.jpg" alt="Rocket Factory Cricket">
+      <div class="deep-image-overlay"></div>
+    </div>
+  </div>
+
+  <!-- BASKETBALL -->
+  <div class="basketball-strip">
+    <div class="bball-label">
+      <p class="section-label" style="color:rgba(253,246,227,0.6);">The Background</p>
+      <h2>THE ATHLETE<br>BEHIND THE<br>PHYSIO</h2>
+    </div>
+    <div class="bball-content">
+      <p class="section-label">Basketball</p>
+      <h3 style="font-family:'Bebas Neue',sans-serif;font-size:36px;color:var(--cream);margin-bottom:18px;">FORMER SEMI-PROFESSIONAL<br>BASKETBALL PLAYER</h3>
+      <p class="section-body">Before becoming a physiotherapist, Georgia competed as a semi-professional basketball player. This background gives her something most clinicians can't offer — a genuine understanding of what it means to train hard, compete, get injured, and fight to get back.</p>
+      <br>
+      <p class="section-body">When Georgia talks about the frustration of injury, or the pressure to return to play, she's not just speaking clinically — she's speaking from lived experience. That perspective shapes everything about how she works with athletes and active people.</p>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <section class="section section--dark" style="text-align:center;">
+    <p class="section-label">Work With Georgia</p>
+    <h2 class="section-title" style="max-width:640px;margin:0 auto 20px;">ELITE SPORT THINKING.<br>APPLIED TO <span>YOUR</span> BODY.</h2>
+    <p class="section-body" style="margin:0 auto 36px;text-align:center;">The same approach Georgia brings to the ATP Tour and The Rocket Factory is available to you at McKinnon Sports & Spinal.</p>
+    <a href="https://gfphysio.au4.cliniko.com/bookings#service" class="btn btn-primary" target="_blank">Book a Session</a>
+  </section>
+
+</div>
+<script src="js/layout.js"></script>
+</body>
+</html>

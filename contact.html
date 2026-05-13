@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact & Book | GF Physio — McKinnon, Melbourne</title>
+<meta name="description" content="Book a physiotherapy session with Georgia Fagan at McKinnon Sports & Spinal, or send an enquiry. 203 McKinnon Road, McKinnon VIC 3204.">
+<link rel="stylesheet" href="css/style.css">
+<style>
+.contact-hero { background: var(--dark2); padding: 80px 80px 64px; border-bottom: 1px solid var(--border); }
+
+.contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+
+.contact-info { padding: 80px 72px; background: var(--dark); }
+.contact-block { margin-bottom: 48px; }
+.contact-block h3 { font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: var(--cream); margin-bottom: 20px; letter-spacing: 0.5px; }
+.contact-item { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 18px; }
+.c-icon { width: 36px; height: 36px; border: 1px solid var(--red-dim); display: flex; align-items: center; justify-content: center; font-size: 15px; color: var(--red); flex-shrink: 0; }
+.c-label { font-family: 'Barlow Condensed', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+.c-value { font-size: 15px; color: var(--cream-dim); }
+.c-value a { color: var(--cream-dim); transition: color 0.2s; }
+.c-value a:hover { color: var(--red-light); }
+
+.hours-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--border); }
+.hours-item { padding: 14px 16px; border-bottom: 1px solid var(--border); border-right: 1px solid var(--border); }
+.hours-item:nth-child(even) { border-right: none; }
+.hours-item:nth-last-child(-n+2) { border-bottom: none; }
+.hours-day { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+.hours-time { font-size: 14px; color: var(--cream-dim); }
+
+/* FORM */
+.contact-form-wrap { padding: 80px 72px; background: var(--dark2); }
+.form-title { font-family: 'Bebas Neue', sans-serif; font-size: 36px; color: var(--cream); margin-bottom: 8px; letter-spacing: 0.5px; }
+.form-subtitle { font-size: 14px; color: var(--muted); margin-bottom: 36px; line-height: 1.6; }
+
+.f-row { margin-bottom: 20px; }
+.f-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+.f-label { display: block; font-family: 'Barlow Condensed', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+.f-input, .f-select, .f-textarea {
+  width: 100%;
+  background: var(--dark3);
+  border: 1px solid rgba(192,57,43,0.2);
+  color: var(--cream);
+  padding: 13px 16px;
+  font-family: 'Barlow', sans-serif; font-size: 15px; font-weight: 300;
+  outline: none; transition: border-color 0.2s;
+  appearance: none; -webkit-appearance: none;
+}
+.f-input:focus, .f-select:focus, .f-textarea:focus { border-color: var(--red); }
+.f-input::placeholder, .f-textarea::placeholder { color: var(--muted); }
+.f-select { cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23a89880' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px; }
+.f-select option { background: var(--dark3); }
+.f-textarea { resize: vertical; min-height: 120px; }
+.f-submit { width: 100%; background: var(--red); color: var(--cream); border: none; font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; padding: 16px; cursor: pointer; margin-top: 8px; transition: background 0.2s; }
+.f-submit:hover { background: var(--red-light); }
+
+.success-msg { display: none; background: var(--dark3); border: 1px solid var(--red-dim); padding: 20px; margin-top: 16px; }
+.success-msg p { font-size: 14px; color: var(--cream-dim); }
+.success-msg strong { color: var(--red-light); }
+
+/* BOOK ONLINE CTA BAR */
+.book-bar {
+  background: var(--red);
+  padding: 48px 80px;
+  display: flex; align-items: center; justify-content: space-between; gap: 32px;
+  flex-wrap: wrap;
+}
+.book-bar h2 { font-family: 'Bebas Neue', sans-serif; font-size: 36px; color: var(--cream); letter-spacing: 1px; }
+.book-bar p { font-size: 15px; color: rgba(253,246,227,0.75); margin-top: 4px; }
+
+/* MAP */
+.map-wrap { border-top: 1px solid var(--border); }
+.map-wrap iframe { display: block; width: 100%; height: 360px; border: none; filter: grayscale(1) brightness(0.6) contrast(1.1); }
+
+@media (max-width: 900px) {
+  .contact-hero { padding: 60px 28px 48px; }
+  .contact-layout { grid-template-columns: 1fr; }
+  .contact-info { padding: 56px 28px; }
+  .contact-form-wrap { padding: 56px 28px; }
+  .f-row-2 { grid-template-columns: 1fr; }
+  .book-bar { padding: 40px 28px; flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <div class="contact-hero">
+    <p class="section-label">Get In Touch</p>
+    <h1 class="section-title">CONTACT<br><span>& BOOK</span></h1>
+    <p class="section-body">Book online via Cliniko, or send an enquiry and Georgia will get back to you within one business day.</p>
+  </div>
+
+  <!-- BOOK ONLINE BAR -->
+  <div class="book-bar">
+    <div>
+      <h2>READY TO BOOK?</h2>
+      <p>Online booking is available 24/7 via Cliniko — pick your service, date, and time.</p>
+    </div>
+    <a href="https://gfphysio.au4.cliniko.com/bookings#service" class="btn" style="background:var(--cream);color:var(--dark);white-space:nowrap;" target="_blank">Book Online Now</a>
+  </div>
+
+  <div class="contact-layout">
+
+    <!-- INFO -->
+    <div class="contact-info">
+      <div class="contact-block">
+        <h3>CLINIC DETAILS</h3>
+        <div class="contact-item">
+          <div class="c-icon">📍</div>
+          <div>
+            <div class="c-label">Address</div>
+            <div class="c-value">203 McKinnon Road<br>McKinnon VIC 3204</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="c-icon">📞</div>
+          <div>
+            <div class="c-label">Phone</div>
+            <div class="c-value"><a href="tel:0437995888">0437 995 888</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="c-icon">✉</div>
+          <div>
+            <div class="c-label">Email</div>
+            <div class="c-value"><a href="mailto:georgia@gfphysio.com.au">georgia@gfphysio.com.au</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="c-icon">IG</div>
+          <div>
+            <div class="c-label">Instagram</div>
+            <div class="c-value"><a href="https://www.instagram.com/gfphysio_/" target="_blank">@gfphysio_</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-block">
+        <h3>CLINIC HOURS</h3>
+        <div class="hours-grid">
+          <div class="hours-item"><div class="hours-day">Monday</div><div class="hours-time">8:00am – 6:00pm</div></div>
+          <div class="hours-item"><div class="hours-day">Tuesday</div><div class="hours-time">8:00am – 6:00pm</div></div>
+          <div class="hours-item"><div class="hours-day">Wednesday</div><div class="hours-time">8:00am – 6:00pm</div></div>
+          <div class="hours-item"><div class="hours-day">Thursday</div><div class="hours-time">8:00am – 6:00pm</div></div>
+          <div class="hours-item"><div class="hours-day">Friday</div><div class="hours-time">8:00am – 5:00pm</div></div>
+          <div class="hours-item"><div class="hours-day">Weekend</div><div class="hours-time">By arrangement</div></div>
+        </div>
+        <p style="font-size:12px;color:var(--muted);margin-top:12px;">* Hours may vary during ATP Tour travel. Check Cliniko for live availability.</p>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <div class="contact-form-wrap">
+      <h2 class="form-title">SEND AN ENQUIRY</h2>
+      <p class="form-subtitle">Not sure which service you need? Fill this out and Georgia will be in touch to help point you in the right direction.</p>
+
+      <!-- 
+        IMPORTANT: Replace YOUR_FORMSPREE_ID below with your actual Formspree form ID.
+        Steps:
+        1. Go to formspree.io and sign up (free)
+        2. Create a new form → it gives you an ID like "xpznqvkb"
+        3. Replace YOUR_FORMSPREE_ID with that ID
+        The form will then email submissions to georgia@gfphysio.com.au
+      -->
+      <form id="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+        <input type="hidden" name="_replyto" value="georgia@gfphysio.com.au">
+        <input type="hidden" name="_subject" value="New enquiry from GF Physio website">
+
+        <div class="f-row-2">
+          <div>
+            <label class="f-label" for="fname">First Name *</label>
+            <input class="f-input" type="text" id="fname" name="first_name" placeholder="First name" required>
+          </div>
+          <div>
+            <label class="f-label" for="lname">Last Name *</label>
+            <input class="f-input" type="text" id="lname" name="last_name" placeholder="Last name" required>
+          </div>
+        </div>
+
+        <div class="f-row-2">
+          <div>
+            <label class="f-label" for="email">Email *</label>
+            <input class="f-input" type="email" id="email" name="email" placeholder="your@email.com" required>
+          </div>
+          <div>
+            <label class="f-label" for="phone">Phone</label>
+            <input class="f-input" type="tel" id="phone" name="phone" placeholder="04XX XXX XXX">
+          </div>
+        </div>
+
+        <div class="f-row">
+          <label class="f-label" for="service">I'm interested in *</label>
+          <select class="f-select" id="service" name="service" required>
+            <option value="">Select a service...</option>
+            <option>Sports Physiotherapy</option>
+            <option>Clinical Pilates / Rehabilitation</option>
+            <option>Women's Health</option>
+            <option>NDIS Physiotherapy</option>
+            <option>High Performance / Team Sport</option>
+            <option>Not sure — please advise</option>
+          </select>
+        </div>
+
+        <div class="f-row">
+          <label class="f-label" for="message">Tell me a bit about what's going on *</label>
+          <textarea class="f-textarea" id="message" name="message" placeholder="Describe your injury, goals, or question..." required></textarea>
+        </div>
+
+        <button type="submit" class="f-submit">Send Enquiry →</button>
+
+        <div class="success-msg" id="success-msg">
+          <p><strong>Thanks! Your enquiry has been sent.</strong><br>Georgia will be in touch within one business day.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MAP -->
+  <div class="map-wrap">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3148.5!2d145.046!3d-37.916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s203+McKinnon+Road+McKinnon+VIC!5e0!3m2!1sen!2sau!4v1"
+      allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+
+</div>
+
+<script src="js/layout.js"></script>
+<script>
+// Formspree AJAX submission
+const form = document.getElementById('contact-form');
+const successMsg = document.getElementById('success-msg');
+if (form) {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    try {
+      const res = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
+      if (res.ok) {
+        form.reset();
+        successMsg.style.display = 'block';
+        successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    } catch (err) {
+      alert('Something went wrong — please email georgia@gfphysio.com.au directly.');
+    }
+  });
+}
+</script>
+</body>
+</html>
