@@ -12,14 +12,24 @@
   min-height: 60vh;
   display: flex; flex-direction: column; justify-content: flex-end;
   padding: 120px 80px 72px;
-  background: linear-gradient(135deg, #1a0e0a 0%, #2e1812 100%);
   position: relative; overflow: hidden;
+}
+.sport-hero-photo {
+  position: absolute; inset: 0;
+}
+.sport-hero-photo img {
+  width: 100%; height: 100%; object-fit: cover;
+  filter: brightness(0.3) contrast(1.1);
+}
+.sport-hero-gradient {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(26,18,16,0.95) 0%, rgba(26,18,16,0.4) 60%, transparent 100%);
 }
 .sport-hero-bg {
   position: absolute; inset: 0;
   font-family: 'Bebas Neue', sans-serif;
   font-size: 320px; line-height: 1;
-  color: rgba(255,255,255,0.025);
+  color: rgba(255,255,255,0.03);
   display: flex; align-items: center; justify-content: center;
   letter-spacing: 8px; pointer-events: none;
   user-select: none;
@@ -100,6 +110,10 @@
 
   <!-- HERO -->
   <div class="sport-hero">
+    <div class="sport-hero-photo">
+      <img src="images/physio-door.jpg" alt="ATP Private Physio — Miami Open">
+    </div>
+    <div class="sport-hero-gradient"></div>
     <div class="sport-hero-bg">SPORT</div>
     <p class="section-label">High Performance</p>
     <h1 class="section-title" style="font-size:clamp(56px,7vw,96px);">WORKING AT<br>THE <span>HIGHEST</span><br>LEVEL</h1>
@@ -112,16 +126,20 @@
       <p class="section-label">Tennis</p>
       <h2 class="section-title">ATP<br><span>WORLD TOUR</span></h2>
       <div class="gold-line"></div>
-      <p class="section-body">In 2025 Georgia joined the ATP World Tour — one of the most demanding physiotherapy roles in professional sport. The Tour requires rapid assessment under pressure, creative problem-solving with limited resources, and the ability to keep athletes competing across a relentless international schedule.</p>
+      <p class="section-body">In 2026 Georgia joined the ATP World Tour — one of the most demanding physiotherapy roles in professional sport. The Tour requires rapid assessment under pressure, creative problem-solving with limited resources, and the ability to keep athletes competing across a relentless international schedule.</p>
       <div class="timeline">
         <div class="timeline-item">
-          <div class="timeline-year">2025</div>
+          <div class="timeline-year">2026</div>
           <div class="timeline-text"><strong>Miami Open</strong> — Georgia's first ATP Tour event, working courtside and in the physio room at one of the Masters 1000's marquee hard court events in Florida.</div>
         </div>
         <div class="timeline-item">
-          <div class="timeline-year">Jun '25</div>
+          <div class="timeline-year">Jun '26</div>
           <div class="timeline-text"><strong>Grass Court Season</strong> — Heading to Europe for the full grass season including Queen's Club Championships and Wimbledon.</div>
         </div>
+      </div>
+      <div style="margin:0 0 32px;overflow:hidden;position:relative;height:160px;">
+        <img src="images/atp2.jpg" alt="Player warm-up area Miami Open" style="width:100%;height:100%;object-fit:cover;filter:brightness(0.6);">
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:10px 16px;background:linear-gradient(to top,rgba(26,18,16,0.9),transparent);font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--red-light);">Player Warm-Up Facility · Miami Open 2026</div>
       </div>
       <div class="tag-row">
         <span class="pill">Courtside Assessment</span>
@@ -132,14 +150,14 @@
       </div>
     </div>
     <div class="deep-image">
-      <img src="images/atp.jpg" alt="ATP Tour">
+      <img src="images/atp.jpg" alt="Miami Open tennis court">
       <div class="deep-image-overlay"></div>
     </div>
   </div>
 
   <!-- UPCOMING TOURNAMENTS -->
   <section class="section section--dark2">
-    <p class="section-label">2025 ATP Calendar</p>
+    <p class="section-label">2026 ATP Calendar</p>
     <h2 class="section-title">ON THE <span>ROAD</span></h2>
     <div class="upcoming-grid">
       <div class="upcoming-card">
